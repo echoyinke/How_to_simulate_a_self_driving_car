@@ -1,17 +1,16 @@
-# How_to_simulate_a_self_driving_car
+# 如何模拟一个无人驾驶汽车
+
 This is the code for "How to Simulate a Self-Driving Car" by Siraj Raval on Youtube
 
-# This video will be released on Wednesday, May 17th at 10 AM PST. This code is a work in progress.
+## 概述
 
-## Overview
+这里是[该视频的相关代码](https://youtu.be/EaY5QiZwSP4)。 我们使用Udacity's [无人驾驶模拟器](https://github.com/udacity/self-driving-car-sim)来产生数据以及训练模型。
 
-This is the code for [this](https://youtu.be/EaY5QiZwSP4) video on Youtube by Siraj Raval. We're going to use Udacity's [self driving car simulator](https://github.com/udacity/self-driving-car-sim) as a testbed for training an autonomous car. 
+## 依赖
 
-## Dependencies
+你可以通过运行下面的命令来安装依赖。
 
-You can install all dependencies by running one of the following commands
-
-You need a [anaconda](https://www.continuum.io/downloads) or [miniconda](https://conda.io/miniconda.html) to use the environment setting.
+你需要 先安装[anaconda](https://www.continuum.io/downloads) or [miniconda](https://conda.io/miniconda.html) 以便来进行环境设置。
 
 ```python
 # Use TensorFlow without GPU
@@ -21,33 +20,31 @@ conda env create -f environments.yml
 conda env create -f environment-gpu.yml
 ```
 
-Or you can manually install the required libraries (see the contents of the environemnt*.yml files) using pip.
+或者你也可以用`pip install`手动的安装需要的库 (参看 environemnt*.yml 文件的内容) 。
 
+## 使用方法
 
-## Usage
+### 运行事先训练好的模型
 
-
-### Run the pretrained model
-
-Start up [the Udacity self-driving simulator](https://github.com/udacity/self-driving-car-sim), choose a scene and press the Autonomous Mode button.  Then, run the model as follows:
+打开 [优达学城的无人驾驶模拟器](https://github.com/udacity/self-driving-car-sim), 选择场景和自动驾驶模式，然后运行下面的命令：
 
 ```python
 python drive.py model.h5
 ```
 
-### To train the model
+### 训练模型
 
-You'll need the data folder which contains the training images.
+你需要一个文件夹来存储训练时候产生的图片.
 
 ```python
 python model.py
 ```
 
-This will generate a file `model-<epoch>.h5` whenever the performance in the epoch is better than the previous best.  For example, the first epoch will generate a file called `model-000.h5`.
+这会产生一个文件 `model-<epoch>.h5` 每个时间段（epoch）都会产生一个文件 .  比如，第一个时间段产生的就叫做 `model-000.h5`.
 
 ## Credits
 
-The credits for this code go to [naokishibuya](https://github.com/naokishibuya). I've merely created a wrapper to get people started.
+代码来自 [naokishibuya](https://github.com/naokishibuya). 这里仅仅又包了一层来帮助大家着手与理解.
 
 
 
